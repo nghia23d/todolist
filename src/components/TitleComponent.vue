@@ -1,8 +1,8 @@
 <template>
   <div class="page-header">
-        <h1>Project 01 - ToDo List <small>VueJs</small></h1>
-        <hr class="my-4" />
-      </div>
+    <h1>Project 01 - ToDo List <small>VueJs</small></h1>
+    <hr class="my-4" />
+  </div>
 </template>
 
 <script>

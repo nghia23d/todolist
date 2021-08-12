@@ -25,7 +25,7 @@ import TodoListTable from "./components/TodoListTable";
 import TitleComponent from "./components/TitleComponent";
 import FormComponent from "./components/FormComponent";
 
-import listTask from "./mocks/tasks";
+// import listTask from "./mocks/tasks";
 import { v4 as uuidv4 } from "uuid";
 
 export default {
@@ -38,9 +38,14 @@ export default {
   },
   data() {
     return {
-      listTask,
+      listTask: null,
       isShowForm: false,
     };
+  },
+  watch: {
+    listTask(value) {
+      localStorage["listTask"] = JSON.stringify(value);
+    },
   },
   methods: {
     handleAddTask(item) {
@@ -56,6 +61,10 @@ export default {
         this.listTask = this.listTask.filter((e) => e.id != item.id);
       }
     },
+  },
+  created() {
+    let data = localStorage["listTask"];
+    this.listTask = data ? JSON.parse(data) : [];
   },
 };
 </script>

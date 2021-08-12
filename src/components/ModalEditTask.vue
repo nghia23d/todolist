@@ -9,9 +9,12 @@
     :id="taskSelected.id"
   >
     <b-form ref="form" @submit.stop.prevent="handleSubmit">
+      <!-- Name -->
       <b-form-group label="Name" label-for="name-input">
         <b-form-input required id="name-input" v-model="name"></b-form-input>
       </b-form-group>
+
+      <!-- Level -->
       <b-form-group>
         <b-form-select
           class="form-control"

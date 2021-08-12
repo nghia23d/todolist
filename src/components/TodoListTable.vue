@@ -67,6 +67,7 @@
     </b-card>
     <b-card header="List Task">
       <b-table
+        show-empty
         striped
         hover
         :items="listTask"
